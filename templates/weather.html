@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link href="{{url_for('static', filename='styles/style.css')}}" rel="stylesheet"/>
+</head>
+<body>
+
+    {%if message%}
+        <h1>{{message}}</h1>
+    {% else %}
+
+        <h1>{{title}} condition</h1>
+        <p>{{status}} {{temp}} &deg;</p>
+        <p>feels like {{feels}} &deg;</p>
+
+    {%endif%}
+    
+    <form action="/weather">
+        <label for="city">City</label>
+        <input type="text" name="city" id="city" required>
+        <button type="submit">Get weather</button>
+</body>
+</html>
