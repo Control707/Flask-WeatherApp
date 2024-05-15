@@ -22,7 +22,7 @@ def weather():
         
         title = weather["name"]
         status = weather["weather"][0]["description"].capitalize()
-        temp = f"{weather["main"]["temp"]:.1f}"
+        temp = f'{weather["main"]["temp"]:.1f}'
         feels = weather["main"]["feels_like"]
     
         return render_template("weather.html", title=title, status=status, temp=temp, feels=feels)
